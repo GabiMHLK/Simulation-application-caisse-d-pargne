@@ -28,3 +28,10 @@ void Compte::changement_mdp() {
         }
     }
 }
+int Compte::getID_compte() const {
+    return ID_compte;
+}
+
+double Compte::getSolde() const {
+    return solde;
+}
