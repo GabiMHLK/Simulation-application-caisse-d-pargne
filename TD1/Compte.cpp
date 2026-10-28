@@ -2,11 +2,13 @@
 #include <iostream>
 using namespace std;
 
-Compte::Compte(Client proprietaire,int ID_compte, double solde, string mdp) : 
+Compte::Compte(Client proprietaire,int ID_compte, double solde, string mdp, int RIB, string IBAN) : 
     propretaire(proprietaire), 
     ID_compte(ID_compte), 
     solde(solde), 
-    mdp(mdp) 
+    mdp(mdp), 
+    RIB(RIB), 
+    IBAN(IBAN)
 {}
 
 void Compte::changement_mdp() {
@@ -34,4 +36,12 @@ int Compte::getID_compte() const {
 
 double Compte::getSolde() const {
     return solde;
+}
+
+int Compte::getRIB() const {
+    return RIB;
+}
+
+string Compte::getIBAN() const {
+    return IBAN;
 }

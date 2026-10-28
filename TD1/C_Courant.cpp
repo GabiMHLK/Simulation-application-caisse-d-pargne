@@ -2,19 +2,15 @@
 #include <iostream>
 using namespace std;
 
-Courant::Courant(Client proprietaire,int ID_compte, double solde, string mdp, string carte_bancaire, int plafond_pay, int plafond_retrait, int nb_plafond, int RIB, string IBAN) : 
-    Compte(proprietaire, ID_compte, solde, mdp), 
+Courant::Courant(Client proprietaire,int ID_compte, double solde, string mdp, int RIB, string IBAN, string carte_bancaire, int plafond_pay, int plafond_retrait, int nb_plafond) : 
+    Compte(proprietaire, ID_compte, solde, mdp, RIB, IBAN), 
     carte_bancaire(carte_bancaire), 
     plafond_pay(plafond_pay), 
     plafond_retrait(plafond_retrait), 
-    nb_plafond(nb_plafond), 
-    RIB(RIB), 
-    IBAN(IBAN) 
+    nb_plafond(nb_plafond)
 {}
 
-int Courant::getRIB() const {
-    return RIB;
-}
+
 
 int Courant::getPlafond_Pay() const {
     return plafond_pay;
@@ -24,9 +20,7 @@ int Courant::getPlafond_Retrait() const {
     return plafond_retrait;
 }
 
-string Courant::getIBAN() const {
-    return IBAN;
-}
+
 
 void Courant::setPlafond() {
     string rep;
